@@ -1,18 +1,28 @@
 import subprocess
-import requests
+import random
 from datetime import datetime
 
-# Fetch a random quote
+# Generate a random word or phrase
 def get_quote():
-    try:
-        response = requests.get("http://numbersapi.com/random/trivia")
-        if response.status_code == 200:
-            data = response.json()
-            return f'"{data["content"]}" - {data["author"]}'
-    except Exception as e:
-        print(f"Error fetching quote: {e}")
-    return "Stay motivated!"
+    # Option 1: Random Word
+    words = ["Motivation", "Creativity", "Resilience", "Courage", "Inspiration"]
+    # Option 2: Random Sentence
+    subjects = ["Success", "Happiness", "Creativity", "Motivation", "Courage"]
+    verbs = ["comes", "thrives", "depends", "is achieved", "is discovered"]
+    objects = [
+        "when you believe in yourself",
+        "through hard work",
+        "by sharing with others",
+        "by overcoming challenges",
+        "with persistence",
+    ]
+    # Randomly choose between word or sentence generation
+    if random.choice([True, False]):
+        return f"Today's focus is on: {random.choice(words)}."
+    else:
+        return f"{random.choice(subjects)} {random.choice(verbs)} {random.choice(objects)}."
 
+        
 # Append the quote to the log file
 def append_quote_to_log(quote):
     date = datetime.now().strftime("%Y-%m-%d")
