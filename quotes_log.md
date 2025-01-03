@@ -1,4 +1,3 @@
 # Daily Quotes Log
 
-2025-01-02: Stay motivated!
-2025-01-02: Stay motivated!
+2025-01-03: Today's focus is on: Courage.
